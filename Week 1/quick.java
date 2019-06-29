@@ -1,5 +1,13 @@
 import java.util.Arrays;
 
+// Union-find with specific canonical element. 
+// Add a method find() to the union-find data type so that find(i) returns the largest element in the connected component containing ii. 
+// The operations, union(), connected(), and find() should all take logarithmic time or better.
+
+// For example, 
+// if one of the connected components is \{1, 2, 6, 9\}{1,2,6,9}, 
+// then the find() method should return 99 for each of the four elements in the connected components.
+
 public class quick {
 
     private static int[] id;
@@ -31,6 +39,7 @@ public class quick {
 
         largest = -1;
         temp = -1;
+
         System.out.println("\n\n");
 
         for (int n = 0; n < N; n++) {
