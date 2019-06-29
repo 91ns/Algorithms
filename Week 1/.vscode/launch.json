@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - swd",
+            "request": "launch",
+            "mainClass": "swd"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - quick",
+            "request": "launch",
+            "mainClass": "quick"
+        }
+    ]
+}
