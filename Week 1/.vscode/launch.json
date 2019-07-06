@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Percolation",
+            "request": "launch",
+            "mainClass": "Percolation"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - swd",
             "request": "launch",
             "mainClass": "swd"
