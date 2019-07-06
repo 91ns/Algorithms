@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Percolation {
 
-    int[][] grid;
+    public static int[][] grid;
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
@@ -16,19 +16,17 @@ public class Percolation {
 
             }
         }
-
         printArray(grid);
-
     }
 
     // opens the site (row, col) if it is not open already
     public void open(int row, int col) {
+        grid[row][col] = 1;
     }
 
     // is the site (row, col) open?
     public boolean isOpen(int row, int col) {
-
-        return false;
+        return grid[row][col] == 1;
     }
 
     // is the site (row, col) full?
@@ -40,7 +38,15 @@ public class Percolation {
     // returns the number of open sites
     public int numberOfOpenSites() {
 
-        return 0;
+        int nOpenSites = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                if (grid[i][j] == 1) {
+                    nOpenSites++;
+                }
+            }
+        }
+        return nOpenSites;
     }
 
     // does the system percolate?
@@ -54,13 +60,25 @@ public class Percolation {
 
         for (int i = 0; i < arr.length; i++) {
             System.out.println(Arrays.toString(arr[i]));
-
         }
     }
 
     // test client (optional)
     public static void main(String[] args) {
         Percolation percolation = new Percolation(10);
+
+        percolation.open(1, 1);
+        percolation.open(1, 9);
+
+        System.out.println("\n\n");
+
+        percolation.printArray(grid);
+        System.out.println("\n\n");
+
+        System.out.println(percolation.isOpen(1, 1));
+        System.out.println(percolation.isOpen(1, 0));
+
+        System.out.println(percolation.numberOfOpenSites());
 
     }
 }
