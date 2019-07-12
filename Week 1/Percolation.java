@@ -3,11 +3,17 @@ import java.util.Arrays;
 public class Percolation {
 
     public static int[][] grid;
+    private Test wqf;
+
+    private static int N = 10;
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
 
         grid = new int[n][n];
+
+        wqf = new Test();
+        wqf.QuickUnionUF(n * n);
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -65,7 +71,7 @@ public class Percolation {
 
     // test client (optional)
     public static void main(String[] args) {
-        Percolation percolation = new Percolation(10);
+        Percolation percolation = new Percolation(N);
 
         percolation.open(1, 1);
         percolation.open(1, 9);
@@ -79,6 +85,12 @@ public class Percolation {
         System.out.println(percolation.isOpen(1, 0));
 
         System.out.println(percolation.numberOfOpenSites());
+        System.out.println(percolation.to1DId(1, 1));
 
     }
+
+    public int to1DId(int i, int j) {
+        return j + (N * i);
+    }
+
 }
