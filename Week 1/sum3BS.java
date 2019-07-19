@@ -52,12 +52,13 @@ public class sum3BS {
             int mid = lo + ((hi - lo) / 2);
             System.out.println("\nMid :" + mid);
 
+            int midValue = a[mid];
 
-            if (key < a[mid]) {
+            if (key < midValue) {
 
                 hi = mid -1;
 
-            }else if(key > a[mid]){
+            }else if(key > midValue){
 
                 lo = mid + 1;
 
