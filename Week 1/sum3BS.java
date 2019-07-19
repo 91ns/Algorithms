@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class sum3BS {
     private static int[] a = new int[]{-40, -20, -10, 0, 5, 10, 30, 40};
 
+
+    private static int pairs = 0;
+
     public static void main(String[] arg) {
 
         System.out.println("We are live!");
@@ -12,9 +15,10 @@ public class sum3BS {
             
             for(int j = 0; j < a.length; j++){
 
-                if(i != j){
+                int key = -(a[i] + a[j]);
 
-                    int key = -(a[i] + a[j]);
+                if(a[i] < a[j] && a[j] < key){ //
+
 
                     System.out.println("\nKey :" + key);
 
@@ -23,6 +27,7 @@ public class sum3BS {
 
 
                     if(result != -1){
+                        pairs++;
                         System.out.println("We found: " + a[i] + " " + a[j] + " " + a[result]);
 
                     }
@@ -30,6 +35,8 @@ public class sum3BS {
                 }
             }
         }
+        System.out.println("\nPairs :" + pairs);
+
     }
 
 
